@@ -1,0 +1,23 @@
+.wrapper {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.heading {
+  margin: 30px 0;
+}
+
+.step {
+  color: rgb(64, 173, 73);
+  margin: 10px 0;
+}
+
+.text {
+  margin: 30px 0;
+  font-size: 21px;
+}
+
+.text span {
+  font-style: italic;
+}
+
