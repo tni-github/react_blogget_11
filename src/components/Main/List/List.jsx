@@ -40,19 +40,18 @@ export const List = () => {
   return (
     <>
       <ul className={style.list}>
+        {popularPosts.map((postData) => (
+          <Post
+            key={postData.data.id +
+              (Math.random()).toString(2).substring(2, 9)}
+            dataPost={postData.data} />
+        ))}
         {postLoading === 'loading' && <PreLoader />}
         {postLoading === 'error' && (
           <Text As='p' color='orange' center fontWeight='bold'>
             Упс... Ошибка загрузки постов на страницу...
           </Text>
         )}
-        {postLoading === 'loaded' &&
-          popularPosts.map((postData) => (
-            <Post
-              key={postData.data.id +
-                (Math.random()).toString(2).substring(2, 9)}
-              dataPost={postData.data} />
-          ))}
         <li ref={endList} className={style.end}/>
       </ul>
       <Outlet />

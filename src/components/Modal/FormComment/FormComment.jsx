@@ -3,13 +3,11 @@ import style from './FormComment.module.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserComment } from '../../../store/userCommentReducer';
-import { useAuth } from '../../../hooks/useAuth';
 
 export const FormComment = ({ isFormCommentOpen, openFormComment }) => {
   const value = useSelector(state => state.userCommentReducer.comment);
   const dispatch = useDispatch();
-
-  const [auth] = useAuth();
+  const authName = useSelector(state => state.auth.data.name);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -30,7 +28,7 @@ export const FormComment = ({ isFormCommentOpen, openFormComment }) => {
         </button> :
         <>
           <Text As='h3' size={14} tsize={18}>
-            {auth.name}
+            {authName}
           </Text>
           <textarea
             className={style.textarea}

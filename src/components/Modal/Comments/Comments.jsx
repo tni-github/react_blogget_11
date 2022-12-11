@@ -4,13 +4,16 @@ import { Text } from '../../../UI/Text';
 import PropTypes from 'prop-types';
 
 export const Comments = ({ comments }) => {
+  comments = [...comments];
+
   if (comments.length === 0) {
     return <div className={style.list}>No comments yet</div>;
   }
 
   if (comments.length !== 0 &&
     (!comments[comments.length - 1].subreddit_id ||
-    comments[comments.length - 1].kind === 'more')) {
+    comments[comments.length - 1].kind === 'more' ||
+    comments[comments.length - 1].count)) {
     comments.pop();
   }
 

@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { commentsRequestAsync } from '../store/comments/commentsAction';
 
 export const useCommentsData = (id) => {
-  const post = useSelector(state => state.commentsReducer.post);
-  const comments = useSelector(state => state.commentsReducer.comments);
-  const status = useSelector(state => state.commentsReducer.status);
+  const post = useSelector(state => state.comments.post);
+  const comments = useSelector(state => state.comments.comments);
+  const status = useSelector(state => state.comments.status);
 
   const dispatch = useDispatch();
 

@@ -1,5 +1,12 @@
 import ClipLoader from 'react-spinners/ClipLoader';
+import style from './PreLoader.module.css';
 
 export const PreLoader = () => (
-  <ClipLoader color='#cc6633' css={{ display: 'block' }} size={30}/>
+  <div className={style.preloader}>
+    <ClipLoader
+      color='#cc6633'
+      css={{ display: 'block' }}
+      size={30}
+    />
+  </div>
 );
